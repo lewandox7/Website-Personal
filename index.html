@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fanpage Bayern Munchen</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="img/logo-bayern.ico">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6.5.1 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('img/bg.jpg');
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    background-size: 100% 100%;
+    font-family: 'Quicksand', sans-serif;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    color: #ffffff;
+}
+
+
+h1{
+   color: rgb(255, 255, 255);
+   text-shadow: 7px 7px 9px rgba(0, 0, 0, 0.8); 
+}
+
+h2{
+    color: rgb(0, 0, 0);
+    text-shadow: 7px 7px 9px rgba(0, 0, 0, 0.8); 
+ }
+
+header.navbar-container {
+    width: 100%;
+    padding-block: 1rem;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 9999;
+    background-color: rgb(255, 255, 255); 
+}
+
+header.navbar-container .logo img {
+    width: 150px;
+}
+
+.potw {
+    border: 5px solid rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    background-image: url('img/bg2.jpg');
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    background-size: 100% 100%;
+    box-shadow: 7px 7px 9px rgba(255, 255, 255, 0.8); 
+    
+}
+
+
+
+.dropdown {
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    padding: 3px;
+}
+
+.dropdown-content {
+    transition: opacity 1s ease;
+    display: none;
+    position: absolute;
+    background-color: #222222;
+    padding: 5px;
+    box-shadow: 0px 8px 16px 0px rgba(255, 255, 255, 0.2);
+    z-index: 1;
+}  
+
+.dropdown-content a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+}
+
+.dropdown-content a:hover {
+    transition: opacity 1s ease;
+    background-color: #ff0000;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+header.navbar-container .nav-list ul {
+    padding-left: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem 1rem;
+}
+
+header.navbar-container .nav-list li {
+    list-style-type: none;
+}
+
+header.navbar-container .nav-list li a {
+    padding: 0.5rem 1.5rem;
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: black;
+    transition: all 0.2s ease-in-out;
+}
+
+a:link {
+    color: white;
+}
+
+header.navbar-container .nav-list li:hover a {
+    transition: opacity 1s ease;
+    background-color: #ff0000;
+    color: rgb(255, 255, 255);
+    
+}
+
+main {
+    flex: 1;
+    width: 100%;
+    max-width: 1200px;
+    margin-inline: auto;
+    padding: 2rem 4rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+main .content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+main .content .content-description {
+    flex: 1 1;
+}
+
+main .content .content-description .title {
+    margin-block: 1.5rem; 
+    font-size: 3rem;
+}
+
+main .content .content-description p {
+    font-size: 1.2rem;
+    line-height: 1.7rem;
+}
+
+main .content .content-description button {
+    padding: 0.8rem 2.5rem;
+    border: 3px solid transparent;
+    border-radius: 999px;
+    margin-block-start: 1rem;
+    background-color: #22272e;
+    font-family: 'Quicksand', sans-serif;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 700;
+    color: white;
+    cursor: pointer;
+    transition: all 0.15s ease-in;
+}
+
+main .content .content-description button:hover {
+    border: 3px solid #ffffff;
+    background-color: rgb(17, 31, 34);
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+}
+
+main .content .content-description button:active {
+    color: white;
+    font-weight: bold;
+}
+
+main .content .content-image {
+    flex: 0.5;
+    display: flex;
+}
+
+main .content .content-image img {
+    width: 300px;
+    min-width: 250px;
+    margin: auto;
+}
+
+main aside {
+    position: fixed;
+    inset-block: 0;
+    inset-inline-end: 0;
+}
+
+main aside .social-media {
+    height: 100%;
+    display: flex;
+}
+
+main aside .social-media ul {
+    padding: 1.5rem 1rem;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    margin: auto;
+    background-color: rgb(56, 55, 55);
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+main aside .social-media li {
+    list-style-type: none;
+}
+
+main aside .social-media li a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: rgb(255, 255, 255);
+    transition: all 0.1s ease-in-out;
+}
+
+main aside .social-media li a:hover {
+    color: #ff0000;
+}
+
+footer {
+    color: black;
+    width: 100%;
+    background-color: #1b1515;
+}
+
+.flex-container {
+    display: flex;
+    background-color: #1d2022;
+    padding: 10px;
+    gap: 50px;
+}
+  
+.flex-item {
+    width: 100%;
+    margin: 25px;
+    margin-top: 0px;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    font-size: 20px;
+}
+
+footer h4 {
+    color: rgba(255, 255, 255, 0.8);
+    padding-left: 20px;
+    font-size: 15px;
+    font-style: italic;
+}
+
+footer .flex-item h3 {
+    text-align: left;
+    padding-left: 18px;
+}
+
+footer .flex-item p {
+    font-size: 1rem;
+    padding-left: 18px;
+}
+
+footer .flex-item li {
+    list-style-type: disc;
+}
+
+footer .flex-item li a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: white;
+    transition: all 0.1s ease-in-out;
+    text-align: left;
+}
+
+footer .flex-item li a:hover {
+    color: #ffffff;
+}
+
+.search-form {
+    float: right;
+    margin-top: 10px;
+}
+
+.search-box {
+    background-color: antiquewhite;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+  
+.search-button {
+    background-color: antiquewhite;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-button:hover {
+    background-color: #ff0000;
+    color: rgb(255, 255, 255);
+}
+
+
+div.scroll-container {
+    background-color: #201d1d;
+    white-space: nowrap;
+    padding: 10px;
+  }
+  
+  div.scroll-container img {
+    padding: 10px;
+  }
+
+  /* Galeri gambar */
+.my-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+  }
+  
+  /* Kolom */
+  .my-column {
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+  }
+  
+  /* Gambar dalam kolom */
+  .my-column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+  }
+  
+  /* Tampilan responsif - dua kolom saat lebar layar kurang dari 800px */
+  @media screen and (max-width: 800px) {
+    .my-column {
+      flex: 50%;
+      max-width: 50%;
+    }
+  }
+  
+  /* Tampilan responsif - satu kolom saat lebar layar kurang dari 600px */
+  @media screen and (max-width: 600px) {
+    .my-column {
+      flex: 100%;
+      max-width: 100%;
+    }
+  }
+  
+    </style>
+</head> 
+    
+    <body>
+        <header class="navbar-container">
+            <div class="logo">
+                <img src="img/fcbayern.png" alt="FC Bayern München">
+                <h2>Fanpage FC Bayern München</h2>
+            </div>
+            
+            <form class="search-form">
+                <input type="text" placeholder="Search..." class="search-box">
+                <button type="submit" class="search-button"><i class="fa fa-search"></i></button>
+            </form>
+
+            <nav class="nav-list">
+                <ul>
+                    <li><a href="#"><i class="fa fa-home"></i> Beranda</a></li>
+                    <li><a href="https://fcbayern.com/en"><i class="fa fa-bars"></i> Web Resmi</a></li>
+                    <li><a href="https://www.google.com/search?q=laga+mendatang+bayern&oq=laga+mendatang+bayern&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIHCAEQIRigATIHCAIQIRigATIHCAMQIRigATIHCAQQIRifBTIHCAUQIRifBTIHCAYQIRifBTIHCAcQIRifBTIHCAgQIRifBTIHCAkQIRifBdIBCDQ3NDZqMGo0qAIAsAIB&sourceid=chrome&ie=UTF-8"><i class="fa fa-search"></i> Laga Mendatang</a></li>
+                    <li><a href="#kontakkami"><i class="fa fa-phone"></i> Kontak</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <main>                
+            <header>
+            <div class="content">
+                <div class="content-description">
+                    <h1 class="title">FC Bayern München</h1>
+                    <p>
+                        <br/>Fußball-Club Bayern München e.V., juga dikenal sebagai Bayern München.<br/>
+                        FC Bayern Munchen adalah klub sepak bola profesional Jerman yang berbasis di kota München, Bavaria, Jerman.<br/>
+                        Klub ini terkenal sebagai klub paling sukses dalam sejarah sepak bola Jerman, setelah memenangkan rekor 33 gelar nasional dan 20 piala nasional.<br/>
+                        <br/>FC Bayern didirikan pada tahun 1900 oleh sebelas pemain sepak bola yang dipimpin oleh Franz John.<br/>
+                        Meskipun Bayern memenangkan kejuaraan nasional pertamanya pada tahun 1932, klub tersebut tidak dipilih untuk Bundesliga pada awal tahun 1963.<br/>
+                    </p>
+                    
+                    <a href="https://id.wikipedia.org/wiki/FC_Bayern_M%C3%BCnchen"><button>Lebih lanjut</button></a>
+                </div>
+                <div class="content-image">
+                    <img src="img/logo bayern.png" alt="Fc Bayern Munchen" />
+                </div>
+                
+            </div>
+            </header>
+            
+            <header>
+                <h1>  </h1>
+            </header>
+
+                <div class="content">
+                    <div class="content-description">
+                        
+                            <div class="flex-container">
+                                <div class="flex-item">
+                                    <header>
+                                        <div class="flex-item">
+                                            <h1>Pemain Sorotan</h1>
+                                            <div class="potw">
+                                                <img src="img/potw.png" alt="Player Of The Week">
+                                                    <li class="dropdown" style="flex:top">
+                                                        <a href="#Robert Lewandowski" class="dropbtn">Robert Lewandowski</a>
+                                                        <div class="dropdown-content">
+                                                            <a>Pencapaian :</a>
+                                                            <a href="https://youtu.be/TthnLjCrMTg?feature=shared">1. 5 Goal 9mnt</a>
+                                                            <a href="https://www.youtube.com/watch?v=K7T4lzElcyU">2. Gol Akrobatik Terbaru</a>
+                                                            <a href="https://www.transfermarkt.com/robert-lewandowski/erfolge/spieler/38253">3. Penghargaan</a>
+                                                            </div>
+                                                    </li>
+                                        </div>
+                                </div>
+                </div>
+
+                <div class="flex-item">
+                    <div id="Biodata">
+                        <h3>Biodata</h3>
+                        <p>Robert Lewandowski (lahir 21 Agustus 1988) adalah pemain sepak bola profesional Polandia yang bermain sebagai striker atau penyerang dan merupakan kapten tim nasional Polandia. 
+                            <br/>Setelah mencetak lebih dari 600 gol dalam karier seniornya untuk klub dan negara, Lewandowski dianggap sebagai salah satu striker terbaik sepanjang masa, serta salah satu pemain tersukses dalam sejarah Bundesliga dan Bayern Munich.</p>
+
+                        <ul>
+                            <div id="instagram"><li><a href="https://www.instagram.com/_rl9/">Instagram : @_rl9</a></li></div>
+                            <div id="twitter"><li><a href="https://twitter.com/lewy_official">Twitter : @lewy_official</a></li></div>
+                            <div id="https://www.facebook.com/rl9official/?locale=id_ID"><li><a href="#">Facebook : Robert Lewandowski</a></li></div>
+                        </ul>
+                    </div>
+                </div>
+              </div>
+            
+           
+          
+            
+            
+
+            <header>
+                <div class="content">
+                    <div class="content-description">
+                        <h1 class="title">Galeri FC Bayern</h1>
+                        <p>
+                            Allianz Arena adalah nama sebuah stadion sepak bola yang terletak di distrik Fröttmaning di sebelah utara kota Munchen, Jerman. 
+                            <br/>Stadion ini dibuka pada tanggal 30 Mei 2005 dengan pertandingan persahabatan antara TSV 1860 München dan 1. FC Nürnberg. 
+                        </p>
+                    </div>
+
+                </header>
+
+
+
+                
+
+                <header>
+                    <div class="content">
+                        <div class="scroll-container">
+                            <img src="img/stadion.png" alt="stadion">
+                            <img src="img/galeri1.png" alt="galeri1">
+                            <img src="img/galeri4.png" alt="galeri4">
+                          </div>
+                    </div>    
+                </header>
+
+                
+
+                <header>
+                    <div class="content">
+                        <div class="scroll-container">
+                            <img src="img/galeri2.png" alt="galeri2">
+                            <img src="img/galeri5.png" alt="galeri5">
+                            
+                            
+                          </div>
+                    </div>    
+                </header>
+
+                
+            <aside>
+                <div class="social-media">
+                    <ul>
+                        <li><a href="#"><i class="fas fa-home"></i></a></li>
+                        <li><a href="https://www.youtube.com/channel/UCZkcxFIsqW5htimoUQKA0iA"><i class="fab fa-youtube"></i></a></li>
+                        <li><a href="https://www.instagram.com/fcbayern"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="https://twitter.com/fcbayern"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="https://www.facebook.com/FCBayern"><i class="fab fa-facebook"></i></a></li>
+                    </ul>
+                </div>
+            </aside>
+
+            
+
+        </main>
+        
+        <footer>
+            <div class="flex-container">
+                <div class="flex-item">
+                    <h3>Link Terkait</h3>
+                    <p>
+                        <ul>
+                            <li><a href="https://www.goal.com/id/tim/bayern-munich/jadwal-hasil/apoawtpvac4zqlancmvw4nk4o">Jadwal & Hasil Bayern Munchen</a></li>
+                            <li><a href="https://fcbayern.com/museum/en">Museum Bayern</a></li>
+                            <li><a href="https://fcbayern.com/en/teams/first-team/coaches-and-staff/berni">Maskot Bayern Munchen</a></li>
+                        </ul>
+                    </p>
+                </div>
+
+                <header>
+                <div class="content">
+                    <div class="content-description">
+                        
+                            <div class="flex-container">
+                                <div class="flex-item">
+                                    <header>
+                                        <div class="flex-item">
+                                            <h1>Creator</h1>
+                                            <div class="potw">
+                                                <img src="img/profil.png" alt="Player Of The Week">
+                                                    <li class="dropdown" style="flex:top">
+                                                        <a href="#Robert Lewandowski" class="dropbtn">Farhan Dwifaza Rosyadi</a>
+                                                        <div class="dropdown-content">
+                                                            <a>Identitas :</a>
+                                                            <a>NIM      : 23051130062</a>
+                                                            <a>KELAS    : J2</a>
+                                                            </div>
+                                                    </li>
+                                        </div>
+                                </div>
+                </div>
+            </header>
+
+                <div class="flex-item">
+                    <div id="kontakkami">
+                        <h3>Kontak Kami</h3>
+                        <p>Alamat : Yogyakarta 55281</p>
+                        <p>Telepon : +62 82233090831</p>
+                        <ul>
+                            <li><a href=" farhandwifaza.2023@student.uny.ac.id">Email : farhandwifaza.2023@student.uny.ac.id</a></li>
+                            <div id="youtube"><li><a>Youtube : -Belum Tersedia-</a></li></div>
+                            <div id="instagram"><li><a href="http://instagram.com/farhandwifaza">Instagram : @farhandwifaza</a></li></div>
+                            <div id="twitter"><li><a>Twitter : -Belum Tersedia-</a></li></div>
+                            <div id="facebook"><li><a>Facebook : -Belum Tersedia-</a></li></div>
+                        </ul>
+                    </div>
+                </div>
+              </div>
+              
+              <h4>Pemrograman Web 2024 &#169; Created by: Farhan D.R 23051130062</h4>
+        </footer>
+    </body>
+</html>
